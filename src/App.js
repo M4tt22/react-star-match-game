@@ -1,15 +1,9 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import MembersArea from "./MembersArea";
 
 function App() {
-
-  /*
-  const displayUserInformation = () => ({
-    
-  });
-  */
-
   return (
     <div className="App">
       <header className="App-header">
@@ -26,6 +20,7 @@ function App() {
           Learn React
         </a>
       </header>
+      <MembersArea />
     </div>
   );
 }
