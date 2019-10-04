@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import authentification from 'react-azure-adb2c';
 
 import './index.css';
-import App from './App';
+import StarMatch from './StarMatch';
 import * as serviceWorker from './serviceWorker';
 
 const myScopes = [
@@ -12,7 +12,7 @@ const myScopes = [
 
 authentification.initialize({
     tenant: 'paymentbackoffice.onmicrosoft.com',
-    signInPolicy: 'B2C_1_pomiesmatthieu',
+    signInPolicy: 'B2C_1_matthieupomies',
     applicationId: '30ae102e-5ed1-45e5-ba75-939c795569cd',
     cacheLocation: 'sessionStorage',
     scopes: myScopes,
@@ -21,7 +21,7 @@ authentification.initialize({
 });
 
 authentification.run(() => {
-    ReactDOM.render(<App />, document.getElementById('root'));
+    ReactDOM.render(<StarMatch onDisconnectButtonClick={() => authentification.signOut} />, document.getElementById('root'));
     serviceWorker.unregister();
 });
 

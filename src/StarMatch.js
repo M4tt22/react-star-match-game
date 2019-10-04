@@ -31,6 +31,12 @@ const PlayAgain = props => (
     </div>
 );
 
+const DisconnectButton = props => (
+    <div>
+        <button onClick={props.onClick}>Disconnect</button>
+    </div>
+);
+
 // Custom Hook
 const useGameState = () => {
     const [stars, setStars] = useState(utils.random(1, 9));
@@ -136,16 +142,19 @@ const Game = (props) => {
                 </div>
             </div>
             <div className="timer">Time Remaining: {secondsLeft}</div>
-            <button>Deconnect</button>
+
         </div>
     );
 };
 
-const StarMatch = () => {
+const StarMatch = (props) => {
     const [gameId, setGameId] = useState(1);
+    
     return (
-        <Game key={gameId} startNewGame={() => setGameId(gameId + 1)} />
-        
+        <>
+            <Game key={gameId} startNewGame={() => setGameId(gameId + 1)} />
+            <DisconnectButton onClick={props.onDisconnectButtonClick} />
+        </>
     );
 }
 
