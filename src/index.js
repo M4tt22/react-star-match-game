@@ -7,13 +7,13 @@ import StarMatch from './StarMatch';
 import * as serviceWorker from './serviceWorker';
 
 const myScopes = [
-    'https://paymentbackoffice.onmicrosoft.com/paymentbackofficeapp/user.read'
+    'https://BA04AADCPAY001.onmicrosoft.com/pachirapay-bo-test/user_read'
 ]
 
 authentification.initialize({
-    tenant: 'paymentbackoffice.onmicrosoft.com',
-    signInPolicy: 'B2C_1_matthieupomies',
-    applicationId: '30ae102e-5ed1-45e5-ba75-939c795569cd',
+    tenant: 'BA04AADCPAY001.onmicrosoft.com',
+    signInPolicy: 'B2C_1_inscription_et_connexion',
+    applicationId: '08228f0c-dad1-43cf-832f-789fb35a82dd',
     cacheLocation: 'sessionStorage',
     scopes: myScopes,
     redirectUri: 'http://localhost:3000/',
