@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import authentication from '@kdpw/msal-b2c-react';
+
 import "./StarMatch.css";
 
 const StarsDisplay = props => (
@@ -34,6 +36,14 @@ const PlayAgain = props => (
 const DisconnectButton = props => (
     <div>
         <button onClick={props.onClick}>Disconnect</button>
+    </div>
+);
+
+const TokenInfo = props => (
+    <div className='div-token-info'>
+        <label className='bold'>User Token</label>
+        <br />
+        <label>{props.label}</label>
     </div>
 );
 
@@ -149,11 +159,14 @@ const Game = (props) => {
 
 const StarMatch = (props) => {
     const [gameId, setGameId] = useState(1);
-    
+    const accessToken = authentication.getAccessToken();
+
     return (
         <>
             <Game key={gameId} startNewGame={() => setGameId(gameId + 1)} />
             <DisconnectButton onClick={props.onDisconnectButtonClick} />
+            <br />
+            <TokenInfo label={accessToken} />
         </>
     );
 }

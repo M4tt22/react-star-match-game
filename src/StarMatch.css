@@ -61,3 +61,11 @@
   font-weight: bold;
   margin: 15px;
 }
+
+.div-token-info {
+  border: 2.5px solid black;
+}
+
+.bold {
+  font-weight : bold;
+}
