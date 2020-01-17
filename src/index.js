@@ -18,8 +18,8 @@ authentication.initialize({
     applicationId: '08228f0c-dad1-43cf-832f-789fb35a82dd',
     cacheLocation: 'sessionStorage',
     scopes: myScopes,
-    redirectUri: 'http://localhost:3000',
-    postLogoutRedirectUri: 'http://localhost:3000'
+    redirectUri: 'http://localhost:3000/',
+    postLogoutRedirectUri: 'http://localhost:3000/'
 });
 
 authentication.run(() => {
